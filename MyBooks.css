@@ -1,17 +1,27 @@
 /*
-    #A2D2FF (Sky Blue)
-    #FFC8DD (Blush Pink)
-    #FFAFCC (Rose)
-    #BDE0FE (Pale Blue)
-    #EDEDE9 (Off White)
+    Warm color scheme
+        #FF6B6B (Coral Red)
+        #FFA69E (Soft Pink)
+        #FFCCB6 (Light Peach)
+        #F9F3DF (Ivory)
+        #5D576B (Muted Gray for typography)
+
+    Cool color scheme
+        #3A506B (Slate Blue)
+        #5BC0BE (Aqua)
+        #6FFFE9 (Mint Accent)
+        #EDF2F4 (Off White)
+        #1C2541 (Dark Navy)
 */
 
 * {
     margin: 0px;
 }
-html {}
+html {
+    width: 100%;
+}
 body {
-    background-color: #EDEDE9;
+    background-color: #1C2541;
 
     display: flex; 
     flex-direction: column;
@@ -19,35 +29,52 @@ body {
     align-items: flex-start;
 }
 
+
+
 header {
-    height: 180px;
+    height: fit-content;
+    width: 100%;
 
-    padding: 20px;
+    padding: 0px;
 
-    background-color: #A2D2FF;
+    background-color: #5BC0BE;
 
-    text-align: center;
+    text-align: left;
+    text-indent: 2em;
+    font-family: "Poppins", sans-serif;
+    font-size: 5em;
+    font-weight: 500;
+    color: white;
+    
 }
 nav {
-    height: 60px;
+    height: 30px;
+    width: 100%;
     
-    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 4px solid white;
+    border-bottom: 2px solid #5BC0BE;
 
-    background-color: #BDE0FE;
+    background-color: #3A506B;
 
     display: flex; 
     flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
 }
 main {
-    min-height: 1200px;
+    min-height: 100vh;
+    width: 94%;
+    align-self: center;
 
-    margin: 20px;
+    margin: 15px;
     border-radius: 1.2em;
+    border-top: 2px solid #263242;
+    border-bottom: 2px solid #263242;
     padding: 20px;
 
-    background-color: #FFAFCC;
+    background-color: #3A506B;
 
     display: flex; 
     flex-direction: column;
@@ -55,17 +82,35 @@ main {
     align-items: flex-start;
 }
 footer {
-    height: 60px;
+    height: 40px;
+    width: 100%;
 
+    border-top: 2px solid #6FFFE9;
 
-    background-color: #BDE0FE;
+    background-color: #3A506B;
 
     display: flex; 
     flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
 }
+nav p {
+    flex-grow: 1;
+    text-align: center;
+    text-decoration: 1px underline whitesmoke;
+    text-underline-offset: 2px;
+    color: whitesmoke;
+}
+footer p {
+    margin-left: 15px;
+    color: whitesmoke;
+    padding: 5px;
+}
+
+
 
 article {
-
+    color: #a8d9d8;
+    font-family: "Verdanda", sans-serif;
 }
+
