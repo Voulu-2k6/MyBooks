@@ -132,3 +132,6 @@ article {
     font-family: "Verdanda", sans-serif;
     font-size: 1.3em;
 }
+#searchBoxHome:focus {
+  outline: 3px solid #1C2541;   /* replaces default focus ring */
+}
