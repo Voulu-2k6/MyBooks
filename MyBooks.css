@@ -206,6 +206,8 @@ article {
     font-family: "Verdanda", sans-serif;
     font-size: 1.3em;
     color: white;
+    
+    opacity: 0;
 }
 
 /* classes */

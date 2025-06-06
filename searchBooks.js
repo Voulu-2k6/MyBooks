@@ -5,7 +5,7 @@ userSearchHome.addEventListener('keydown', (event) => {
     if(event.key === 'Enter'){
         const query = userSearchHome.value;
         searchBooks(query);
-        userSearchHome.value = ""; // remove this line if we want searches to persist
+        userSearchHome.value = ""; /* TO DO: remove this line if we want searches to persist */
     }
 })
 
@@ -45,10 +45,9 @@ async function searchBooks(query){
     }
 }
 
-    //Milestone 3: display the data on site
 function displayResults(searchResults){
 
-    if(searchResults === -1){}
+    if(searchResults === -1){console.log("nothing found..."); /* TO DO: display on page */ }
     else{
 
         searchResultsBoxHome = document.querySelectorAll(`#searchResultsHome div`);
@@ -67,6 +66,8 @@ function displayResults(searchResults){
         
             searchResultsBoxHome[i].addEventListener('click', (e) => {
 
+                sessionStorage.setItem("selectedBook", JSON.stringify(searchResults[i]));
+
                 // get the aside div box and make in invisible
                 selectedSearchedBookHome = document.querySelector("#selectedBookHome");
                 selectedSearchedBookHome.setAttribute('style', 'opacity: 0;');
@@ -80,19 +81,20 @@ function displayResults(searchResults){
                 }
                 selectedSearchedBookHome.innerHTML = searchResultsBoxHome[i].innerHTML + `
                     <p class="description">${selectedBookDescription}</p>
-                    <div id="addFavoriteButtonHome">Add Favorite</div>
                 `;
 
-                //enlarge the cover
+                // enlarge the cover
                 selectedSearchedBookHome.firstElementChild.setAttribute('style', "height: auto; width: 70%;");
 
                 // force reload so the page knows to run the animation again once it's added. Idk why it's like this.
                 void selectedSearchedBookHome.offsetHeight;
 
-                // fade in animation
+                // fade in animations
                 selectedSearchedBookHome.setAttribute('style', `${selectedSearchedBookHome.getAttribute('style')} 
-                    animation: fadeIn 0.8s forwards;
-                `);
+                    animation: fadeIn 0.8s forwards;`);
+
+                document.querySelector("#addFavoriteButtonHome").setAttribute('style', `animation: fadeIn 0.8s forwards;`);
+
                 
             });
         }
