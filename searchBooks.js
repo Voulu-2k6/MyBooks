@@ -1,3 +1,6 @@
+//Populates search box once we hit enter
+//TODO: animate the favorite button
+
 // getting our data
 const userSearchHome = document.querySelector('#searchBoxHome');
 
@@ -93,7 +96,7 @@ function displayResults(searchResults){
                 selectedSearchedBookHome.setAttribute('style', `${selectedSearchedBookHome.getAttribute('style')} 
                     animation: fadeIn 0.8s forwards;`);
 
-                document.querySelector("#addFavoriteButtonHome").setAttribute('style', `animation: fadeIn 0.8s forwards;`);
+                document.querySelector("#searchHome aside div").setAttribute('style', `animation: fadeIn 0.8s forwards;`);
 
                 
             });

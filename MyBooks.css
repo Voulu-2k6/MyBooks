@@ -113,6 +113,11 @@ article {
     color: #a8d9d8;
     font-family: "Verdanda", sans-serif;
 }
+article h1 {
+    color: white;
+    font-size: 2em;
+    margin: 15px;
+}
 
 
 /* id styles */
@@ -165,7 +170,7 @@ article {
     display: flex; 
     flex-direction: column;
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: center;
 
     text-align: center;
 }
@@ -178,23 +183,31 @@ article {
     border-left: 2px solid #5BC0BE;
     padding-left: 20px;
 
+    text-align: center;
+}
+#searchHome aside section {
+    flex-grow: 1;
+    width: 100%;
+
     display: flex; 
     flex-direction: column;
     justify-content: flex-start;
-    align-items: top;
-
-    text-align: center;
+    align-items: center;
 }
 #searchHome aside div {
-    flex-grow: 1;
-    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
 }
-#addFavoriteButtonHome {
-    height: 50px;
+#searchHome aside div p {
     background-color: #1C2541;
     box-shadow: 0 0 0.2em 0.2em rgba(91, 192, 190, 0.5);
 
-    margin-top: 15px;
+    margin: 10px;
+    padding: 10px;
     border-radius: 4em;
     border: 1px solid #5BC0BE;
 
@@ -204,14 +217,39 @@ article {
     align-items: center;
 
     font-family: "Verdanda", sans-serif;
-    font-size: 1.3em;
+    font-size: 1em;
     color: white;
-    
-    opacity: 0;
 }
 
+
 /* classes */
+.homeList {
+    border-top: 2px solid #5BC0BE;
+
+    padding: 10px;
+}
+.homeList section {
+    margin-left: 50px;
+    padding-bottom: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.homeList section div {
+    margin: 20px;
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    text-align: center;
+}
 .title {
+    max-width: 11em;
+
     font-family: "Verdanda", sans-serif;
     font-size: 1em;
     color: white;
@@ -219,6 +257,8 @@ article {
     padding-top: 8px;
 }
 .author {
+    max-width: 11em;
+
     font-family: "Verdanda", sans-serif;
     font-size: 0.8em;
     font-style: italic;

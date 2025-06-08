@@ -23,7 +23,7 @@
                 <p>Home</p>
                 <p>Search</p>
                 <p>MyFavs</p>
-                <p>Wishlist</p>
+                <p>Wish list</p>
                 <p>Shop</p>
             </nav>
 
@@ -41,16 +41,33 @@
                         <div></div>
                     </section>
                     <aside id="searchHomeAside">
-                        <div id="selectedBookHome"></div>
-                        <p id="addFavoriteButtonHome">Add Favorite</p>
+                        <section id="selectedBookHome"></section>
+                        <div id="selectedBookOptionsHome">
+                            <p id="addFavoriteButtonHome">Add Favorite</p>
+                            <p id="addWLButtonHome">Add to wish list</p>
+                        </div>
                     </aside>
                 </article>
-                <article id="myFavoritesListHome">
+                <article id="myFavoritesListHome" class="homeList">
+                    <h1>Favorites:</h1>
                     <section>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </section>
                 </article>
-                <article id="myWishListHome">
+                <article id="myWishListHome" class="homeList">
+                    <h1>Wish list:</h1>
                     <section>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </section>
                 </article>
                 <!--Once I'm more familiar with the APIs, come back here to add more.-->
@@ -64,6 +81,9 @@
 
             <script src="searchBooks.js"></script>
             <script src="setFavorite.js"></script>
+            <script src="getFavoritesHome.js"></script>
+            <script src="setWL.js"></script>
+            <script src="getWLHome.js"></script>
 
         </body>
     </html>
