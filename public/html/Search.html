@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <!--Page title, fonts, css calls-->
+            <link rel="stylesheet" href="../css/Gen.css"></link>
+            <link rel="stylesheet" href="../css/Search.css"></link>
+        </head>
+        <body>
+            <header>
+                <!--Maybe the same as home page?-->
+                Search
+            </header>
+            <nav>
+                <!--Probably the same as home page-->
+                <a href="MyBooks.html">Home</a>
+            </nav>
+            <main>
+                <section id="searchCriteriaSection">
+
+                    <div id="searchTags">
+                        <input id="searchBarTags" type="text" placeholder="Search for a tag"></input>
+                        <div id="tagResults">
+                            <div></div><div></div><div></div><div></div><div></div>
+                            <div></div><div></div><div></div><div></div><div></div>
+                            <div></div><div></div><div></div><div></div><div></div>
+                            <div></div><div></div><div></div><div></div><div></div>
+                            <div></div><div></div><div></div><div></div><div></div>
+                            <div></div><div></div><div></div><div></div><div></div>
+                        </div>
+                    </div>
+
+                </section>
+                
+                <!--Workshop: Three sections?
+                    Left: search criterion, 20% of the page?
+                        language
+                        search by: author, title, ISBN, tags
+                        tags...
+                            search for tags themselves
+                            common tags come up first, then rare rags
+                        Each criterion will need to be made clickable and unclickable, 
+                        and will need to be displayed somewhere
+                        filters
+                            exclude potentially mature books
+                            exclude books w/o an author, description, cover
+                            exclude ratings under a certain threshold-->
+                
+                <section id="searchAndResultsSection">
+                    <div id="goButton">Go!</div>
+                    <div id="searchResultsMain">
+                        <div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div>
+                    </div>
+                </section>
+                    <!--Middle: Search bar itself at top, probably spans 45% of the page
+                    Below are the results. Make them pageable, maybe try to add a total count of results at the top.-->
+
+                <section id="searchDisplaySection"></section>
+                    <!--right: Same as home page, display the book and allow it to be added to favorites and wishlists.
+                    but, we will update it further than the current home page is. 
+                    ratings, link to goodreads, categories shown.-->
+
+            </main>
+            <footer>
+                <!--probably the same as main-->
+                <p>Credits</p>
+            </footer>
+
+                <script src="../js/searchTags.js"></script>
+                <script src="../js/searchByTags.js"></script>
+
+        </body>
+
+    </html>

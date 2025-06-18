@@ -1,112 +1,4 @@
-/*
-    Warm color scheme
-        #FF6B6B (Coral Red)
-        #FFA69E (Soft Pink)
-        #FFCCB6 (Light Peach)
-        #F9F3DF (Ivory)
-        #5D576B (Muted Gray for typography)
-
-    Cool color scheme
-        #3A506B (Slate Blue)
-        #5BC0BE (Aqua)
-        #6FFFE9 (Mint Accent)
-        #EDF2F4 (Off White)
-        #1C2541 (Dark Navy)
-*/
-
-* {
-    margin: 0px;
-}
-html {
-    width: 100%;
-}
-body {
-    background-color: #1C2541;
-
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-
-/* Body Children */
-header {
-    height: fit-content;
-    width: 100%;
-
-    padding: 0px;
-
-    background-color: #172141;
-
-    text-align: left;
-    text-indent: 2em;
-    font-family: "Poppins", sans-serif;
-    font-size: 5em;
-    font-weight: 500;
-    color: whitesmoke;
-    
-}
-nav {
-    height: 30px;
-    width: 100%;
-    
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-top: 4px solid white;
-    border-bottom: 2px solid #5BC0BE;
-
-    background-color: #3A506B;
-
-    display: flex; 
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-main {
-    min-height: 100vh;
-    width: 94%;
-    align-self: center;
-
-    margin: 15px;
-    border-radius: 1.2em;
-    border-top: 2px solid #263242;
-    border-bottom: 2px solid #263242;
-    padding: 20px;
-
-    background-color: #3A506B;
-
-    display: flex; 
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
-}
-footer {
-    height: 40px;
-    width: 100%;
-
-    border-top: 2px solid #5BC0BE;
-
-    background-color: #3A506B;
-
-    display: flex; 
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-nav p {
-    flex-grow: 1;
-    text-align: center;
-    text-decoration: 1px underline whitesmoke;
-    text-underline-offset: 2px;
-    color: whitesmoke;
-}
-footer p {
-    margin-left: 15px;
-    color: whitesmoke;
-    padding: 5px;
-}
-
+/* The css file specific to our home page. */
 
 /* main children */
 article {
@@ -174,6 +66,9 @@ article h1 {
 
     text-align: center;
 }
+#searchResultsHome div:focus {
+    border: 4px solid aqua;
+}
 #searchHome aside {
     grid-row-start: 1;
     grid-row-end: 3;
@@ -229,7 +124,7 @@ article h1 {
     padding: 10px;
 }
 .homeList section {
-    margin-left: 50px;
+    margin-left: 20px;
     padding-bottom: 10px;
 
     display: flex;
@@ -238,7 +133,8 @@ article h1 {
     align-items: center;
 }
 .homeList section div {
-    margin: 20px;
+    flex-grow: 1;
+    margin: 10px;
 
     display: flex; 
     flex-direction: column;
@@ -246,31 +142,6 @@ article h1 {
     align-items: center;
 
     text-align: center;
-}
-.title {
-    max-width: 11em;
-
-    font-family: "Verdanda", sans-serif;
-    font-size: 1em;
-    color: white;
-
-    padding-top: 8px;
-}
-.author {
-    max-width: 11em;
-
-    font-family: "Verdanda", sans-serif;
-    font-size: 0.8em;
-    font-style: italic;
-    color: rgb(217, 217, 217);
-
-    padding: 5px;
-}
-.cover {
-    width: 10em;
-    height: auto;
-    align-self: center;
-    border: 2px solid #5BC0BE;
 }
 #searchHome aside .cover {
     border: 3.5px solid #1C2541;

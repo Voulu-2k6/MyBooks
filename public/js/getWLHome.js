@@ -21,7 +21,7 @@ for(a in wishListHome){
 while(wlHomePopCount < 6)
 {
     wlBoxesHome[wlHomePopCount].innerHTML = 
-        `<img class="cover" src="images\\plus-sign-icon-2048x2048-mp0pz4g8.png" style="border: none;">
+        `<img class="cover" src="../images/plus-sign-icon-2048x2048-mp0pz4g8.png" style="border: none;">
         <p class="title">Add to your wish list!</p>`;
     wlHomePopCount++;
 }

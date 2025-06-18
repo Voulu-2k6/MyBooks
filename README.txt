@@ -8,16 +8,22 @@ Tools used in this project:
     APIs: Google Books API
 
 Features to be implemented: 
-    Favorites list
-    Wish list
-    Reviewing Features
+    Favorites list and wish list storing on the backend
+    linking to review site - search.html, myBooks.html
+    displaying reviews - both pages
+    show selected tags somewhere
+    show result numbers
+    pagination
+
+Features to be improved upon:
+    Search by tags
+        -attatch relevancy and sort as such
+    Display selected book 
+        -don't create a new eventlistener every time
 
 Milestones:
-    Call a book and store it in a temporary server
-    Create a favorites list and store it on the local machine
-    Create a wish list and store it on the local machine
-    Successfully store a book on a remote server
-    Have user data for at least two users stored remotely
-
+    How does the user know that what they're hovering over is clickable?
+    Where can the user see their favorites? 
+    
 General tasks:
     polish style
