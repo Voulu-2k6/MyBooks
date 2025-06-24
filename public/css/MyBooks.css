@@ -69,53 +69,6 @@ article h1 {
 #searchResultsHome div:focus {
     border: 4px solid aqua;
 }
-#searchHome aside {
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column: 2;
-
-    margin: 10px;
-    border-left: 2px solid #5BC0BE;
-    padding-left: 20px;
-
-    text-align: center;
-}
-#searchHome aside section {
-    flex-grow: 1;
-    width: 100%;
-
-    display: flex; 
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-#searchHome aside div {
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    opacity: 0;
-}
-#searchHome aside div p {
-    background-color: #1C2541;
-    box-shadow: 0 0 0.2em 0.2em rgba(91, 192, 190, 0.5);
-
-    margin: 10px;
-    padding: 10px;
-    border-radius: 4em;
-    border: 1px solid #5BC0BE;
-
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    font-family: "Verdanda", sans-serif;
-    font-size: 1em;
-    color: white;
-}
-
 
 /* classes */
 .homeList {
@@ -142,12 +95,4 @@ article h1 {
     align-items: center;
 
     text-align: center;
-}
-#searchHome aside .cover {
-    border: 3.5px solid #1C2541;
-}
-
-/* animation */
-@keyframes fadeIn {
-    to {opacity: 1;}
 }

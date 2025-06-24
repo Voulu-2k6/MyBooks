@@ -1,5 +1,13 @@
 let search = document.querySelector("#goButton");
 
+searchResultsBoxSearch = document.querySelectorAll(`#searchResultsMain div`);
+for(let i = 0; i < searchResultsBoxSearch.length; i++){
+    searchResultsBoxSearch[i].setAttribute("id", "searchResult" + i);
+    searchResultsBoxSearch[i].addEventListener('click', (e) => {
+            displaySelectedBook(i);
+    });
+}
+
 search.addEventListener('click', async (e) => {
     let tags = JSON.parse(sessionStorage.getItem("tagSearchList")) || null;
     let q = "";
@@ -60,4 +68,28 @@ function mapBookData(rawBook){
         isbn13: volume.industryIdentifiers?.find(id => id.type === "ISBN_13")?.identifier,
         isbn10: volume.industryIdentifiers?.find(id => id.type === "ISBN_10")?.identifier
     };
+}
+
+function displaySelectedBook(bookNo){
+
+    //get the book data
+    let selectedBook = mapBookData(JSON.parse(sessionStorage.getItem("OnScreen"))[bookNo]);
+    console.log(selectedBook);
+    let selectedBookDisplayHome = document.querySelector(".selectedBookDisplay");
+
+    // copy data from clicked book and add description, shorten if too long
+    let selectedBookDescription = selectedBook.description;
+    if(selectedBookDescription.length > 600){ // check for end of word
+        let wordCutOff = 600;
+        while(selectedBookDescription.substring(wordCutOff, wordCutOff+1) !== " "){wordCutOff += 1;}
+        selectedBookDescription = selectedBookDescription.substring(0, wordCutOff) + "...";
+    }
+    setInnerHTML(selectedBookDisplayHome, selectedBook);
+    selectedBookDisplayHome.innerHTML +=  `<p class="description">${selectedBookDescription}</p>`;
+}
+
+function setInnerHTML(div, book){
+    div.innerHTML = `<img class="cover" src="${book.cover}">
+        <p class="title">${book.title}</p>
+        <p class="author">${book.authors[0]}</p>`;
 }

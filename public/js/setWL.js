@@ -1,7 +1,7 @@
 //TODO: database stuff
 //TO DO: make it clear we added to the wish list
 
-let setWLHome = document.querySelector("#addWLButtonHome");
+let setWLHome = document.querySelector(".addWLButton");
 
 setWLHome.addEventListener('click', (e) => {
 

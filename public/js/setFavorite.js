@@ -1,7 +1,7 @@
 //TODO: database stuff
 //TO DO: make it clear we added a favorite
 
-let setFavoriteHome = document.querySelector("#addFavoriteButtonHome");
+let setFavoriteHome = document.querySelector(".addFavoriteButton");
 
 setFavoriteHome.addEventListener('click', (e) => {
 

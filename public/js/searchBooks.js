@@ -52,7 +52,7 @@ async function searchBooks(query){
         // results will be an array of whatever is returned by the function
         const results = data.items.map(item => {return mapBookData(item);});
 
-        sessionStorage.setItem('onScreen', JSON.stringify(data.items));
+        sessionStorage.setItem('OnScreen', JSON.stringify(data.items));
         displayResults(results);
 
     } catch (error) {
@@ -100,9 +100,9 @@ function setInnerHTML(div, book){
 function displaySelectedBook(bookNo){
 
     //get the book data
-    let selectedBook = mapBookData(JSON.parse(sessionStorage.getItem("onScreen"))[bookNo]);
+    let selectedBook = mapBookData(JSON.parse(sessionStorage.getItem("OnScreen"))[bookNo]);
     console.log(selectedBook);
-    let selectedBookDisplayHome = document.querySelector("#selectedBookHome");
+    let selectedBookDisplayHome = document.querySelector(".selectedBookDisplay");
 
     // copy data from clicked book and add description, shorten if too long
     let selectedBookDescription = selectedBook.description;
