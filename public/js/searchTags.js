@@ -18375,23 +18375,38 @@ const rareTags = rareTagsRaw.split(/\r?\n/);
 
 let tagBar = document.querySelector('#searchBarTags');
 let tagResultDivs = document.querySelectorAll('#tagResults div');
+let tagBoxes = document.querySelectorAll("#currentTags div");
+
+sessionStorage.setItem("OnScreen", null);
+sessionStorage.setItem("tagSearchList", null);
+sessionStorage.setItem("warning", false);
 
 for(tagDiv of tagResultDivs){
         
     tagDiv.addEventListener('click', (e) => {
 
         let x = e.currentTarget.innerHTML;
-        if(x.substring(0,1) === "("){x = x.substring(1,x.length-2);}
+        let rare = false;
+        if(x.substring(0,1) === "("){
+            x = x.substring(1,x.length-2);
+            rare = true;
+        }
         else{x = x.substring(0, x.length-1);}
         console.log(x);
 
         let tagSearchList = JSON.parse(sessionStorage.getItem("tagSearchList")) || [];
-        if(!tagSearchList.includes(x))
+        if(tagSearchList.length >= 4)
+        {
+            console.log("4 tags is the maximum.");
+        }
+        else if(!tagSearchList.includes(x))
         {
             tagSearchList.push(x);
+            if(rare){sessionStorage.setItem("warning", true);}
         }
         else{
             tagSearchList.splice(tagSearchList.indexOf(x), 1);
+            if(rare){checkRare();}
         }
         sessionStorage.setItem("tagSearchList", JSON.stringify(tagSearchList));
 
@@ -18400,6 +18415,20 @@ for(tagDiv of tagResultDivs){
     });
 }
 
+//click the tag to remove it
+for(let i = 0; i < 4; i++)
+{
+    tagBoxes[i].setAttribute('id', 'tagBox' + (i+1));
+    tagBoxes[i].addEventListener('click', (e) => {
+        curTagList = JSON.parse(sessionStorage.getItem("tagSearchList"));
+        let l = curTagList ? curTagList.length : 0;
+        if(i < l){curTagList.splice(i, 1);}
+        sessionStorage.setItem("tagSearchList", JSON.stringify(curTagList));
+        showTagList();
+    });
+}
+
+//search function
 tagBar.addEventListener('input', (e) => {
 
     let search = tagBar.value;
@@ -18446,6 +18475,22 @@ tagBar.addEventListener('input', (e) => {
 
 });
 
+//self explainatory 
 function showTagList(){
+    tagList = JSON.parse(sessionStorage.getItem("tagSearchList"));
+
+    let tag = 0;
+    while(tag < 4){
+        if(tag < tagList.length){tagBoxes[tag].innerHTML = tagList[tag];}
+        else{tagBoxes[tag].innerHTML = "";}
+        tag++;
+    }
+
+    if(sessionStorage.getItem("warning")){console.log("You're using a tag with under 40 hits,\nincluding it in a multi-tag search will most likely net 0 results.");}
+}
+
+function checkRare(){
+    console.log("May or may not still have a rare tag.");
     //TBI
+    sessionStorage.setItem("warning", false);
 }

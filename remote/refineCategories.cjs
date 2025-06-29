@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const readStream = fs.createReadStream('../metadata/subjects.txt', 'utf8');
+const readStream = fs.createReadStream('../public/metadata/outsourcedSubjects.txt', 'utf8');
 
 let lines = [];
 readStream.on('data', (chunk) => {
@@ -36,20 +36,20 @@ async function refine(lines){
             {
                 if(data.items.length === 40){
                     console.log(category + ": common");
-                    fs.appendFile('../metadata/generalSubjects.txt', `\n${category}`, 'utf8', (err) => {
+                    fs.appendFile('../public/metadata/NEOgeneralSubjects.txt', `\n${category}`, 'utf8', (err) => {
                         if (err) console.error('Write error:', err);
                     });
                 }
                 else{
                     console.log(category + ": rare");
-                    fs.appendFile('../metadata/rareSubjects.txt', `\n${category}`, 'utf8', (err) => {
+                    fs.appendFile('../public/metadata/NEOrareSubjects.txt', `\n${category}`, 'utf8', (err) => {
                         if (err) console.error('Write error:', err);
                     });
                 }
             }
             else{
                 console.log(category + ": bad");
-                fs.appendFile('../metadata/badSubjects.txt', `\n${category}`, 'utf8', (err) => {
+                fs.appendFile('../public/metadata/NEObadSubjects.txt', `\n${category}`, 'utf8', (err) => {
                     if (err) console.error('Write error:', err);
                 });
             }

@@ -64,11 +64,22 @@ footer{
     display: flex;
     flex-direction: column;
 }
-#goButton {
+#currentTags {
+    display: flex;
+    flex-direction: row;
+}
+#goButton, #currentTags div{
     background: white;
     color: black;
-    margin: 10px;
+    margin: 5px;
+    padding: 5px 10px;
     border-radius: 1em;
+
+    font-family: "Verdanda", sans-serif;
+    font-size: 1em;
+}
+#goButton {
+    margin-bottom: 12px;
 }
 #searchResultsMain {
     display: flex;

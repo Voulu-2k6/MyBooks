@@ -48,11 +48,13 @@ for(let i = 0; i < resultBoxes.length; i++){
 }
 
 function displayResults(results){
-    for(let i = 0; i < results.length; i++)
+    for(let i = 0; i < 18; i++)
     {
-        resultBoxes[i].innerHTML = `<img class="cover" src="${results[i].cover}">
-        <p class="title">${results[i].title}</p>
-        <p class="author">${results[i].authors[0]}</p>`;
+        if(i < results.length){resultBoxes[i].innerHTML = `<img class="cover" src="${results[i].cover}">\n<p class="title">${results[i].title}</p>\n<p class="author">${results[i].authors[0]}</p>`;}
+        else{
+            resultBoxes[i].innerHTML = ``;
+        }
+        
     }
 }
 
