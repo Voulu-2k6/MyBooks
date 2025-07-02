@@ -9,7 +9,7 @@ const COMMON_WORDS = [
 ];  
 
 const fs = require('fs');
-const readStream = fs.createReadStream('../public/metadata/NEOgeneralSubjects.txt', 'utf8');
+const readStream = fs.createReadStream('../public/metadata/generalSubjects.txt', 'utf8');
 
 let lines = [];
 readStream.on('data', (chunk) => {
@@ -31,19 +31,19 @@ let falseNeg = 0;
 
 async function main(lines){
 
-    for(q of lines){
-        console.log(q);
+    for(let q = 605; q<lines.length; q++){
+        console.log(lines[q]);
 
-        let relevance = await parseQ(q, 200, 10);
+        let relevance = await parseQ(lines[q], 200, 10);
 
         if(relevance > 150){
-            console.log(q + " reached recursion threshold with " + relevance);
-            let query = q + "+intitle:";
-            relevance = await skimParse(query);
+            console.log(lines[q] + " reached recursion threshold with " + relevance);
+            let query = lines[q] + "+intitle:";
+            relevance = Math.max(await skimParse(query), relevance);
         }
 
-        console.log(q + " final relevance: " + relevance);
-        fs.appendFile('../public/metadata/tagRelevanceTest.txt', `\n${q},${relevance}`, 'utf8', (err) => {
+        console.log(lines[q] + " final relevance: " + relevance);
+        fs.appendFile('../public/metadata/tagsAndRelevance.txt', `\n${lines[q]},${relevance}`, 'utf8', (err) => {
             if (err) console.error('Write error:', err);
         });
     }
@@ -60,7 +60,7 @@ async function parseQ(q, limit, size){
     
     while(i < limit){
 
-        url = `https://www.googleapis.com/books/v1/volumes?q=${q}&langRestrict=en&printType=books&maxResults=${size}&startIndex=${i}`;
+        url = `https://www.googleapis.com/books/v1/volumes?q=subject:${q}&langRestrict=en&printType=books&maxResults=${size}&startIndex=${i}`;
 
         try{
             let response = await fetch(url);
@@ -85,7 +85,7 @@ async function parseQ(q, limit, size){
         i += size;
     }
 
-    console.log(q + ": " + maxKnownResults);
+    console.log("subject:" + q + ": " + maxKnownResults);
     return maxKnownResults;
 
 }
