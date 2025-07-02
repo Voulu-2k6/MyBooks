@@ -1,9 +1,10 @@
 let search = document.querySelector("#goButton");
+let resultBoxes = document.querySelectorAll("#searchResultsMain div");
+import { GOOGLE_BOOKS_API_KEY } from "../../remote/APIconfig.js";
 
-searchResultsBoxSearch = document.querySelectorAll(`#searchResultsMain div`);
-for(let i = 0; i < searchResultsBoxSearch.length; i++){
-    searchResultsBoxSearch[i].setAttribute("id", "searchResult" + i);
-    searchResultsBoxSearch[i].addEventListener('click', (e) => {
+for(let i = 0; i < resultBoxes.length; i++){
+    resultBoxes[i].setAttribute("id", "searchResult" + i);
+    resultBoxes[i].addEventListener('click', (e) => {
             displaySelectedBook(i);
     });
 }
@@ -17,13 +18,12 @@ search.addEventListener('click', async (e) => {
     }
     console.log(q);
 
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${q}&langRestrict=en&printType=books&maxResults=18`;
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${q}&langRestrict=en&printType=books&maxResults=18&key=${GOOGLE_BOOKS_API_KEY}`;
 
     try{
         const response = await fetch(url);
         const data = await response.json();
 
-        console.log(data.totalItems); // DISPLAY THIS IN A NEW ELEMENT AT SOME POINT
         sessionStorage.setItem('OnScreen', JSON.stringify(data.items));
 
         // loops through the data constant's items array with map()
@@ -38,14 +38,6 @@ search.addEventListener('click', async (e) => {
     }
 
 });
-
-let resultBoxes = document.querySelectorAll("#searchResultsMain div");
-for(let i = 0; i < resultBoxes.length; i++){
-    resultBoxes[i].addEventListener('click', (e) => {
-        let showBook = JSON.parse(sessionStorage.getItem('OnScreen'))[i] || null;
-        console.log(showBook); // THIS WILL BECOME THE DISPLAYSELECTEDBOOK OF THIS FILE
-    });
-}
 
 function displayResults(results){
     for(let i = 0; i < 18; i++)
@@ -68,7 +60,9 @@ function mapBookData(rawBook){
         description: volume.description || 'No description',
         categories: volume.categories || 'None listed',
         isbn13: volume.industryIdentifiers?.find(id => id.type === "ISBN_13")?.identifier,
-        isbn10: volume.industryIdentifiers?.find(id => id.type === "ISBN_10")?.identifier
+        isbn10: volume.industryIdentifiers?.find(id => id.type === "ISBN_10")?.identifier,
+        maturity: volume.maturityRating,
+        rating: volume.averageRating || 'unknown'
     };
 }
 
@@ -86,7 +80,10 @@ function displaySelectedBook(bookNo){
         while(selectedBookDescription.substring(wordCutOff, wordCutOff+1) !== " "){wordCutOff += 1;}
         selectedBookDescription = selectedBookDescription.substring(0, wordCutOff) + "...";
     }
+    let maturityColor = selectedBook.maturity == "NOT_MATURE" ? 'darkgreen' : 'darkred';
     setInnerHTML(selectedBookDisplayHome, selectedBook);
+    selectedBookDisplayHome.innerHTML +=  `<p class="rating">Rating: ${selectedBook.rating}/5</p>`;
+    selectedBookDisplayHome.innerHTML +=  `<p class="maturity" style="background-color: ${maturityColor}">${selectedBook.maturity}</p>`;
     selectedBookDisplayHome.innerHTML +=  `<p class="description">${selectedBookDescription}</p>`;
 }
 
