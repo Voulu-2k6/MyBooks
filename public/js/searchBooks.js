@@ -39,9 +39,8 @@ for(let i = 0; i < searchResultsBoxHome.length; i++){
 // async keyword lets us pause the function using 'await' during API calls.
 async function searchBooks(query){
 
-    const queryURL = encodeURIComponent(query);
-    const url = `https://www.googleapis.com/books/v1/volumes?q=subject:${queryURL}&langRestrict=en&printType=books&maxResults=8`;
-
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&langRestrict=en&printType=books&maxResults=8`;
+    console.log(url);
     try {
 
         const response = await fetch(url);

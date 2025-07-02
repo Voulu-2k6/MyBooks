@@ -21,7 +21,7 @@ for(a in favoritesHome){
 while(favHomePopCount < 6)
 {
     favoritesBoxesHome[favHomePopCount].innerHTML = 
-        `<img class="cover" src="images\\plus-sign-icon-2048x2048-mp0pz4g8.png" style="border: none;">
+        `<img class="cover" src="../images/plus-sign-icon-2048x2048-mp0pz4g8.png" style="border: none;">
         <p class="title">Add another favorite!</p>`;
     favHomePopCount++;
 }

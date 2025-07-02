@@ -1,0 +1,87 @@
+Romance,1044
+Love,2257
+Fiction,2399
+Drama,2400
+Series,387
+Humor,2400
+Friendship,2384
+Mystery,1173
+Thriller,301
+Fantasy,1769
+Science Fiction,2257
+Character Death,215
+Character Study,495
+Family,1969
+Enemies to Lovers,70
+Kissing,572
+Love Confessions,238
+Depression,622
+Panic Attacks,50
+Violence,1955
+Comfort,50
+Blood and Injury,323
+Blood,1370
+Injury,70
+Jealousy,1294
+Flirting,368
+Teasing,532
+Crying,501
+Trauma,349
+Nightmares,601
+Swearing,828
+Christmas,2068
+Crime,2115
+Historical Fiction,369
+Paranormal Romance,70
+Biography / Memoir,2387
+Self-Help,425
+Poetry,2400
+Graphic Novels / Comics,60
+Graphic Novels,50
+Adventure,445
+Literary Fiction,100
+Contemporary,50
+Dystopian,110
+Satire,120
+Historical Romance,40
+Space Opera,80
+Adult,130
+Audiobooks,1414
+Novellas,446
+Anthologies,1154
+Love Triangle,103
+Survival,130
+Time Travel,307
+Mythology-Inspired,168
+Space / Sci-Fi,61
+War / Military,2381
+Redemption Arc,90
+Classic,169
+Heartwarming,40
+Romantic,50
+Humorous,100
+Grief Mourning,2400
+Child Abuse Implied,60
+Character Death Implied,120
+Nonfiction,868
+Home Life Fiction,180
+Light Romance,50
+Character Loss,46
+Youth Fiction,1791
+Inspirational Fiction,120
+Taboo Romance,40
+Multiverse Fiction,319
+Fantasy Fiction,1910
+Thriller,301
+Literary Fiction,100
+Dystopian Fiction,100
+Light Mystery,98
+Suspense Thriller,800
+Nonfiction Crime,60
+LGBTQ+ Fiction,40
+School Stories,545
+Suspense Fiction,344
+Action Adventure,50
+Contemporary Fiction,40
+Crack,80
+Reading,2290
