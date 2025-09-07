@@ -5,6 +5,7 @@ let setWLHome = document.querySelector(".addWLButton");
 setWLHome.addEventListener('click', (e) => {
 
     let wishedBook = JSON.parse(sessionStorage.getItem("selectedBook"));
+    console.log(wishedBook);
 
     // TO DO: Update this when we implement more APIs
     let formattedWishedBook = {
