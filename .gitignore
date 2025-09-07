@@ -3,3 +3,4 @@
 node_modules/
 
 remote/.env
+remote/APIconfig.js
