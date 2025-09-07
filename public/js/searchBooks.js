@@ -100,6 +100,7 @@ function displaySelectedBook(bookNo){
 
     //get the book data
     let selectedBook = mapBookData(JSON.parse(sessionStorage.getItem("OnScreen"))[bookNo]);
+    sessionStorage.setItem('selectedBook', JSON.stringify(selectedBook));
     console.log(selectedBook);
     let selectedBookDisplayHome = document.querySelector(".selectedBookDisplay");
 
