@@ -1,10 +1,10 @@
 //populates the favorites section on the home page
-//TODO: update with database call
-//update when a favorite gets added
+//TODO: page refresh update when a favorite gets added
+//
 
 const favoritesBoxesHome = document.querySelectorAll("#myFavoritesListHome div");
 
-const favoritesHome = JSON.parse(localStorage.getItem('Favorites')); //replace with database call
+const favoritesHome = JSON.parse(localStorage.getItem('Favorites')); 
 
 let favHomePopCount = 0;
 for(a in favoritesHome){

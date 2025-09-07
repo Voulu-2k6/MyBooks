@@ -20,6 +20,7 @@ setFavoriteHome.addEventListener('click', (e) => {
 
     // TO DO: push to the database once we make it
     let favoriteBooks = JSON.parse(localStorage.getItem("Favorites")) || {};
+    console.log(favoriteBooks);
     favoriteBooks[formattedFavoritedBook.id] = formattedFavoritedBook;
     localStorage.setItem("Favorites", JSON.stringify(favoriteBooks));
 });
