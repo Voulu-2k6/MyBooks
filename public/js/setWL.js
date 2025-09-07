@@ -1,4 +1,3 @@
-//TODO: database stuff
 //TO DO: make it clear we added to the wish list
 
 let setWLHome = document.querySelector(".addWLButton");
@@ -18,8 +17,10 @@ setWLHome.addEventListener('click', (e) => {
 
     };
 
-    // TO DO: push to the database once we make it
+    console.log(formattedWishedBook);
+
     let wishList = JSON.parse(localStorage.getItem("wishList")) || {};
+    console.log(wishList);
     wishList[formattedWishedBook.id] = formattedWishedBook;
     localStorage.setItem("wishList", JSON.stringify(wishList));
 });
