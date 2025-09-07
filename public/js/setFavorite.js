@@ -5,7 +5,7 @@ let setFavoriteHome = document.querySelector(".addFavoriteButton");
 
 setFavoriteHome.addEventListener('click', (e) => {
 
-    favoritedBook = JSON.parse(sessionStorage.getItem("selectedBook"));
+    let favoritedBook = JSON.parse(sessionStorage.getItem("selectedBook"));
 
     // TO DO: Update this when we implement more APIs
     let formattedFavoritedBook = {

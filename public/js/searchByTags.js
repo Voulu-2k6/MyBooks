@@ -1,6 +1,5 @@
 let search = document.querySelector("#goButton");
 let resultBoxes = document.querySelectorAll("#searchResultsMain div");
-import { GOOGLE_BOOKS_API_KEY } from "../../remote/APIconfig.js";
 
 for(let i = 0; i < resultBoxes.length; i++){
     resultBoxes[i].setAttribute("id", "searchResult" + i);
@@ -12,13 +11,13 @@ for(let i = 0; i < resultBoxes.length; i++){
 search.addEventListener('click', async (e) => {
     let tags = JSON.parse(sessionStorage.getItem("tagSearchList")) || null;
     let q = "";
-    for(tag in tags){
+    for(let tag in tags){
         q += "subject:" + encodeURIComponent(tags[tag]);
         if(tag != tags.length-1){q += "+";}
     }
     console.log(q);
 
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${q}&langRestrict=en&printType=books&maxResults=18&key=${GOOGLE_BOOKS_API_KEY}`;
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${q}&langRestrict=en&printType=books&maxResults=18`;
 
     try{
         const response = await fetch(url);
