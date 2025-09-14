@@ -2,6 +2,8 @@ Tate Sorensen - 6/4/2025
 
 This project aims to build an online 'library' as a website. 
 
+Link to the project: https://voulu-2k6.github.io/MyBooks/public/html/index.html 
+
 Tools used in this project:
     Frontend: HTML/CSS/JavaScript
     Backend: Node.js/Express.js/JavaScript to gather metadata
