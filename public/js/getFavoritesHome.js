@@ -1,6 +1,5 @@
 //populates the favorites section on the home page
 //TODO: page refresh update when a favorite gets added
-//
 
 const favoritesBoxesHome = document.querySelectorAll("#myFavoritesListHome div");
 

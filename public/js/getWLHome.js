@@ -1,10 +1,9 @@
 //populates the favorites section on the home page
-//TODO: update with database call
 //update when a favorite gets added
 
-const wlBoxesHome = document.querySelectorAll("#myWishListHome div");
+const wlBoxesHome = document.querySelectorAll("#myWishListHome div"); 
 
-const wishListHome = JSON.parse(localStorage.getItem('wishList')); //replace with database call
+const wishListHome = JSON.parse(localStorage.getItem('wishList')); 
 
 let wlHomePopCount = 0;
 for(a in wishListHome){
